@@ -6,7 +6,7 @@
         font-family: "Rubik", "sans-serif";
     }
     body {
-        background-color: #8ff0ec;
+        background-color: #f8b359;
         }
     div {
         text-align: center;
@@ -14,7 +14,7 @@
     }
 
     h1 {
-        color: Blue;
+        color: red;
         font-size: 40pt;
     }
 
@@ -30,22 +30,15 @@
 </style>
 <body>
 <div>
-    <h1>Salary Recommender System</h1><br>
-    <p1>Please select variables for salary prediction.</p1>
+    <h1>Welcome to Beer Belly!</h1><br>
+    <p1>This site will return your top 10 beer recommendations using our recommender system.</p1>
+    <h2>Please key in your username:<h2>
 
-
-    <img src="{{url_for('static', filename='logo_1.jpg')}}" align="middle" />
-    <h1>KARDFINDER</h1>
-    <h2>json file generator for banks</h2>
-     <form method="POST" action="/dropdown">
-        <select name="colour">
-      <option value="{{colours[0]}}" selected>{{colours[0]}}</option>
-      {% for colour in colours[1:] %}
-        <option value="{{colour}}">{{colour}}</option>
-      {% endfor %}
-        </select>
-      <input type="submit" value ="Submit">
-      </form>
+    <form action="/post_field/" method="post">
+    <input type="text" name="this_form"/>
+    <input type="submit" value="Submit"/>
+    </form>
+    {{ value1 }}
 
 </div>
 </body>

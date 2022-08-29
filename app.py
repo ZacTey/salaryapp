@@ -10,19 +10,22 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/', methods=['GET'])
-def dropdown():
-    colours = ['SBI', 'Kotak', 'Citi', 'AMEX', 'BOB', 'AXIS', 'HDFC', 'IDBI', 'YES', 'IndusInd']
-    return render_template('feba.html', colours=colours)
+@app.route("/post_field/", methods=['post'])
+def open_url():
+    text = request.form['this_form']
+    old_url = 'https://hkptbr4goi.execute-api.ap-southeast-1.amazonaws.com/Beer_RecSys/userID/???'
+    url = old_url.replace('???', text)
+    try:
+        uResponse = requests.get(url)
+    except requests.ConnectionError:
+        return "Connection Error"
+    Jresponse = uResponse.text
+    data = json.loads(Jresponse)
 
+    rcmd = data['Items'][0]['recommendation']
+    return render_template("index.html", value1=data)
+    #return redirect(url)
 
-@app.route('/dropdown', methods = ['POST'])
-def dropp():
-    dropdownval = request.form.get('colour')
-    print(dropdownval)
-    return redirect("/", code=302)
-if __name__ == "__main__":
-    app.run()
 
 if __name__ == "__main__":
     app.run(debug=False)
