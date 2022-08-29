@@ -1,0 +1,52 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        font-family: "Rubik", "sans-serif";
+    }
+    body {
+        background-color: #8ff0ec;
+        }
+    div {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    h1 {
+        color: Blue;
+        font-size: 40pt;
+    }
+
+    h2 {
+        margin-top: 30px;
+        font-size: 10pt;
+    }
+
+    p1 {
+        font-size: 18pt;
+    }
+
+</style>
+<body>
+<div>
+    <h1>Salary Recommender System</h1><br>
+    <p1>Please select variables for salary prediction.</p1>
+
+
+    <h2>Please select jobs</h2>
+     <form method="POST" action="/dropdown">
+        <select name="job">
+      <option value="{{jobs[0]}}" selected>{{jobs[0]}}</option>
+      {% for jobs in jobs[1:] %}
+        <option value="{{job}}">{{job}}</option>
+      {% endfor %}
+        </select>
+
+      <input type="submit" value ="Submit">
+      </form>
+
+    {{ value1 }}
+
+</div>
+</body>
