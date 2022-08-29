@@ -32,7 +32,11 @@
 <div>
     <h1>Salary Recommender System</h1><br>
     <p1>Please select variables for salary prediction.</p1>
-
+    <select>
+    {% for each in dropdown_list %}
+      <option value="{{each}}">{{each}}</option>
+    {% endfor %}
+    </select>
 
 
 </div>
