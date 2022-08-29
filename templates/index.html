@@ -34,19 +34,18 @@
     <p1>Please select variables for salary prediction.</p1>
 
 
-    <h2>Please select jobs</h2>
+    <img src="{{url_for('static', filename='logo_1.jpg')}}" align="middle" />
+    <h1>KARDFINDER</h1>
+    <h2>json file generator for banks</h2>
      <form method="POST" action="/dropdown">
-        <select name="job">
-      <option value="{{jobs[0]}}" selected>{{jobs[0]}}</option>
-      {% for jobs in jobs[1:] %}
-        <option value="{{job}}">{{job}}</option>
+        <select name="colour">
+      <option value="{{colours[0]}}" selected>{{colours[0]}}</option>
+      {% for colour in colours[1:] %}
+        <option value="{{colour}}">{{colour}}</option>
       {% endfor %}
         </select>
-
       <input type="submit" value ="Submit">
       </form>
-
-    {{ value1 }}
 
 </div>
 </body>
