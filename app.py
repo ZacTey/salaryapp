@@ -12,9 +12,8 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/search")
 def view_method():
-    dropdown_list = ['Air', 'Land', 'Sea']
+    dropdown_list = ['job1', 'job2', 'job3']
     return render_template('index.html', dropdown_list=dropdown_list)
 
 if __name__ == "__main__":
