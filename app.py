@@ -15,12 +15,6 @@ def dropdown():
     colours = ['SBI', 'Kotak', 'Citi', 'AMEX', 'BOB', 'AXIS', 'HDFC', 'IDBI', 'YES', 'IndusInd']
     return render_template('index.html', colours=colours)
 
-
-@app.route('/dropdown', methods = ['POST'])
-def dropp():
-    dropdownval = request.form.get('colour')
-    print(dropdownval)
-    return redirect("/", code=302)
 if __name__ == "__main__":
     app.run()
 
