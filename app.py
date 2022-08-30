@@ -1,16 +1,14 @@
-from flask import Flask, render_template, request, redirect, jsonify
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired
-import simplejson
-import requests
-import json
+
+import numpy as np
+from flask import Flask, request, jsonify, render_template
+import pickle
+
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
 
-@app.route("/")
-def index():
-    return render_template("index.html")
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -21,7 +19,7 @@ def predict():
 
     output = round(prediction[0], 2)
 
-    return render_template('index.html', prediction_text='Salary should be $ {}'.format(output))
+    return render_template('index.html', prediction_text='Sales should be $ {}'.format(output))
 
 @app.route('/results',methods=['POST'])
 def results():
