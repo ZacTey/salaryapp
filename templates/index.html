@@ -59,11 +59,11 @@
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="POST">
 
-        <input type="int" name="job2_cat" placeholder="job title" required="required" />
-        <input type="int" name="location_cat" placeholder="location" required="required" />
-        <input type="int" name="level_cat" placeholder="levels" required="required" />
-        <input type="int" name="type_cat" placeholder="job type" required="required" />
-    	<input type="int" name="exp" placeholder="years of experience" required="required" />
+        <input type="text" name="job2_cat" placeholder="job title" required="required" />
+        <input type="text" name="location_cat" placeholder="location" required="required" />
+        <input type="text" name="level_cat" placeholder="levels" required="required" />
+        <input type="text" name="type_cat" placeholder="job type" required="required" />
+    	<input type="text" name="exp" placeholder="years of experience" required="required" />
 
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict Salary</button>
