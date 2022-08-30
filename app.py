@@ -17,7 +17,7 @@ def predict():
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
 
-    output = round(prediction[0], 2)
+    output = prediction[0]
 
     return render_template('index.html', prediction_text='Salary should be $ {}'.format(output))
 
