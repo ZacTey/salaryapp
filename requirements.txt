@@ -9,3 +9,4 @@ simplejson
 flask_wtf
 wtforms
 numpy
+sklearn
