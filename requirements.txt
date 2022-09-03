@@ -10,4 +10,4 @@ flask_wtf
 wtforms
 numpy
 sklearn
-sklearn.neighbors
+
