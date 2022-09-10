@@ -16,12 +16,9 @@ def predict():
     input3 = request.form.get('level')
     input4 = request.form.get('type')
     input5 = request.form.get('exp')
-    input_all = [input1] + [input2] + [input3] + [input4] + [input5]
-    int_features = [input_all]
-    final_features = [np.array(int_features)]
-    prediction = model.predict(final_features)
-    output = prediction[0]
-    return render_template('index.html', prediction_text='Salary should be $ {}'.format(output))
+
+
+    return render_template('index.html', prediction_text='Salary should be $ {}'.format(input1))
 
 
 if __name__ == "__main__":
