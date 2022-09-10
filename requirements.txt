@@ -10,4 +10,5 @@ flask_wtf
 wtforms
 numpy
 sklearn
+pandas
 
