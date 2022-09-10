@@ -16,7 +16,6 @@ def predict():
     input3 = request.form.get('level')
     input4 = request.form.get('type')
     input5 = request.form.get('exp')
-    input6 = request.form.get('jobdes')
     input_all = [input1] + [input2] + [input3] + [input4] + [input5]
     int_features = [input_all]
     final_features = [np.array(int_features)]
