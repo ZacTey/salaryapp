@@ -19,7 +19,7 @@ def predict():
     input4 = request.form['type']
     input5 = request.form['exp']
     input6 = request.form['jobdes']
-    input_all = [input1] + [input2] + [input3] + [input4] + [input5] + [input6]
+    input_all = [input1] + [input2] + [input3] + [input4] + [input5] 
     int_features = [input_all]
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
