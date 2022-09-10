@@ -55,7 +55,7 @@
 <body style="background: #3e16b6;">
  <div class="login">
 	<h1>Salary Recommender System</h1>
-
+	{{ prediction_text }}
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="POST">
 
@@ -72,7 +72,7 @@
 
    <br>
    <br>
-   {{ prediction_text }}
+   
 
  </div>
 </body>
