@@ -4,7 +4,7 @@ import pickle
 import pandas as pd
 
 app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
+model = pickle.load(open('modelSEExtraTree.pkl', 'rb'))
 
 @app.route('/')
 def home():
@@ -13,11 +13,11 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
     input1 = request.form.get("job_title")
-    input2 = request.form.get('location')
+    input2 = request.form.get('exp')
     input3 = request.form.get('level')
-    input4 = request.form.get('type')
-    input5 = request.form.get('exp')
-    int_features = list(input1) + list(input2) + list(input3) + list(input4) + list(input5)
+    input4 = request.form.get('industry')
+    input5 = request.form.get('Job Description')
+    int_features = list(input2) + list(input3) + list(input4) 
     final_features = pd.DataFrame(int_features)
     final_features = final_features.transpose()
     prediction = model.predict(final_features)
