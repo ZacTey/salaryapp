@@ -28,7 +28,6 @@ def predict():
     
     col_jd = list(range(0,20))
     df_jd = df.drop(df.columns[[col_jd]], axis=1)
-    df_jd.head(1)
     
     input0 = request.form.get("job_title")
     input1 = request.form.get('exp')
