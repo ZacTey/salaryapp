@@ -19,7 +19,7 @@ def predict():
     df.drop(df.columns[[0,2]], axis=1, inplace=True)
     
     
-    ccol_jd = list(range(0,20))
+    col_jd = list(range(0,20))
     df_jd = df.copy()
     df_jd.drop(df.columns[[col_jd]], axis=1, inplace=True)
     
