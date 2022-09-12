@@ -12,12 +12,51 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    input1 = request.form.get("job_title")
-    input2 = request.form.get('exp')
-    input3 = request.form.get('level')
-    input4 = request.form.get('industry')
-    input5 = request.form.get('Job Description')
-    int_features = list(input2) + list(input3) + list(input4) 
+    input0 = request.form.get("job_title")
+    input1 = request.form.get('exp')
+    input2 = request.form.get('level')
+    input3 = request.form.get('industry')
+    input4 = request.form.get('Job Description')
+    
+    text4 = input4.lower()  # Lowercase text
+    text4 = re.sub(f"[{re.escape(punctuation)}]", " ", text4)  # Remove punctuation
+    text4 = " ".join(text4.split())  # Remove extra spaces, tabs, and new lines
+    text4 = re.sub(r'\d+', '', text4)
+    tokens4 = nltk.word_tokenize(text4)  # tokenize
+    #tokens = [WNlemma.lemmatize(t) for t in tokens] # lemmatize
+    stops = set(stopwords.words('english'))
+    tokens4 = [word for word in tokens4 if word not in stops] # remove stopword
+    input4 = " ".join(tokens) # join all token separated by a space so that it is a document
+    input4 = input4.split()
+    #print(input4)
+    
+    
+    input3_array = []
+    for column_headers in df_ind.columns:
+        if column_headers in input3:
+          #print(column_headers)
+          input3_array.append(1)
+          #print (1)
+        else:
+          #print(column_headers)
+          input3_array.append(0)
+          #print (0)
+    
+    input4_array = []
+    for column_headers in df_jd.columns:
+        if column_headers in input4:
+          #print(column_headers)
+          input4_array.append(1)
+          #print (1)
+        else:
+          #print(column_headers)
+          input4_array.append(0)
+          #print (0)
+    
+    
+    
+    
+    int_features = list(input1) + list(input2) + input3_array + input4_array 
     final_features = pd.DataFrame(int_features)
     final_features = final_features.transpose()
     prediction = model.predict(final_features)
