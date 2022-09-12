@@ -15,20 +15,21 @@ def home():
 def predict():
     
     # Load and read file
-    df = pd.read_csv("mcf5SE_fullstopword_TFIDF.csv",index_col=[0])
-    df = df.drop(columns = ['max'],axis=1)
-    df = df.loc[[0]]
+    df = pd.read_csv("mcf5SE_fullstopword_TFIDF.csv")
+    df.drop(df.columns[[0,2]], axis=1, inplace=True)
     
     
-    col_jd = list(range(0,20))
-    df_jd = df.drop(df.columns[[col_jd]], axis=1)
+    ccol_jd = list(range(0,20))
+    df_jd = df.copy()
+    df_jd.drop(df.columns[[col_jd]], axis=1, inplace=True)
     
     
     dflen = len(df.columns)
-
     col_ind = list(range(20,dflen))
-    df_ind = df.drop(df.columns[[col_ind]], axis=1)
-    df_ind = df_ind.drop(df.columns[[0,1,2]], axis=1)
+
+    df_ind = df.copy()
+    df_ind.drop(df.columns[[col_ind]], axis=1, inplace=True)
+    df_ind.drop(df.columns[[0,1,2]], axis=1, inplace=True)
     
     
     input0 = request.form.get("job_title")
