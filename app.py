@@ -15,7 +15,7 @@ def home():
 def predict():
     
     # Load and read file
-    df = pd.read_csv("/content/drive/My Drive/Capstone/mcf5SE_fullstopword_TFIDF.csv",index_col=[0])
+    df = pd.read_csv("mcf5SE_fullstopword_TFIDF.csv",index_col=[0])
     df = df.drop(columns = ['max'])
     df = df.loc[[0]]
     
