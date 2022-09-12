@@ -11,4 +11,5 @@ wtforms
 numpy
 sklearn
 pandas
-
+re
+nltk
