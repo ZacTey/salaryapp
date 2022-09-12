@@ -20,33 +20,33 @@ def predict():
     df = df.loc[[0]]
     
     
-    #col_jd = list(range(0,20))
-    #df_jd = df.drop(df.columns[[col_jd]], axis=1)
+    col_jd = list(range(0,20))
+    df_jd = df.drop(df.columns[[col_jd]], axis=1)
     
     
-    #dflen = len(df.columns)
+    dflen = len(df.columns)
 
-    #col_ind = list(range(20,dflen))
-    #df_ind = df.drop(df.columns[[col_ind]], axis=1)
-    #df_ind = df_ind.drop(df.columns[[0,1,2]], axis=1)
+    col_ind = list(range(20,dflen))
+    df_ind = df.drop(df.columns[[col_ind]], axis=1)
+    df_ind = df_ind.drop(df.columns[[0,1,2]], axis=1)
     
     
-    #input0 = request.form.get("job_title")
-    #input1 = request.form.get('exp')
-    #input2 = request.form.get('level')
-    #input3 = request.form.get('industry')
-    #input4 = request.form.get('Job Description')
+    input0 = request.form.get("job_title")
+    input1 = request.form.get('exp')
+    input2 = request.form.get('level')
+    input3 = request.form.get('industry')
+    input4 = request.form.get('Job Description')
     
-    #text4 = input4.lower()  # Lowercase text
-    #text4 = re.sub(f"[{re.escape(punctuation)}]", " ", text4)  # Remove punctuation
-    #text4 = " ".join(text4.split())  # Remove extra spaces, tabs, and new lines
-    #text4 = re.sub(r'\d+', '', text4)
-    #tokens4 = nltk.word_tokenize(text4)  # tokenize
-    #tokens = [WNlemma.lemmatize(t) for t in tokens] # lemmatize
-    #stops = set(stopwords.words('english'))
-    #tokens4 = [word for word in tokens4 if word not in stops] # remove stopword
-    #input4 = " ".join(tokens) # join all token separated by a space so that it is a document
-    #input4 = input4.split()
+    text4 = input4.lower()  # Lowercase text
+    text4 = re.sub(f"[{re.escape(punctuation)}]", " ", text4)  # Remove punctuation
+    text4 = " ".join(text4.split())  # Remove extra spaces, tabs, and new lines
+    text4 = re.sub(r'\d+', '', text4)
+    tokens4 = nltk.word_tokenize(text4)  # tokenize
+    tokens = [WNlemma.lemmatize(t) for t in tokens] # lemmatize
+    stops = set(stopwords.words('english'))
+    tokens4 = [word for word in tokens4 if word not in stops] # remove stopword
+    input4 = " ".join(tokens) # join all token separated by a space so that it is a document
+    input4 = input4.split()
     #print(input4)
     
     
