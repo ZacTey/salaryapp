@@ -58,9 +58,10 @@
  <div class="login">
 	<h1>Salary Recommender System</h1>
 	{{ prediction_text }}
+	<p></p>
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="POST">
-	<label for="job title" font size="-3">Job Title</label>
+	<label for="job title" font size="-3">Job Title</label><br>
         <input type="text" name="job_title" placeholder="Please enter job title" value="Software Engineer" required="required" readonly>
 	    
 	<label for="exp" font size="-3">Years of Experience</label>    
@@ -77,9 +78,9 @@
         <option value="6">middle management</option>
         <option value="7">professional</option>
 	<option value="8">senior management</option>
-	</select>
+	</select><br>
 	
-	<label for="industry" font size="-3">Industry</label> 
+	<label for="industry" font size="-3">Industry</label><br>
         <!--<input type="text" name="industry" placeholder="Please enter industry" required="required" />-->
 	<select name="industry" id="industry">
 	<option value="1">accounting/auditing/taxation</option>
@@ -99,10 +100,10 @@
         <option value="15">other</option>
 	<option value="16">sales/retail</option>   
 	<option value="17">telcom</option>  
-	</select> 
+	</select><br> 
 	    
 	    
-	<label for="jobdes" font size="-3">Enter Your Job Description Here</label> 
+	<label for="jobdes" font size="-3">Enter Your Job Description Here</label><br> 
 	<input type="text" name="jobdes" placeholder="Please enter Job Description">
 	<p></p>
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict Salary</button>
