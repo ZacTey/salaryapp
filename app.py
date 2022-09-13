@@ -11,20 +11,20 @@ model = pickle.load(open('modelSEExtraTree.pkl', 'rb'))
     
 # Load and read file
 df = pd.read_csv("mcf5SE_fullstopword_TFIDF.csv")
-df.drop(df.columns[[0,2]], axis=1, inplace=True)
+df = df.iloc[:1]
+df.drop(df.columns[[0,1,2]], axis=1, inplace=True)
+dflen = len(df.columns)
+df.reset_index(drop=True)
     
-    
-col_jd = range(0,20)
+ccol_jd = range(0,19)
 df_jd = df.copy()
 df_jd.drop(df.columns[col_jd], axis=1, inplace=True)
 
-    
-dflen = len(df.columns)
-col_ind = range(20,dflen)
 
+col_ind = range(19,dflen)
 df_ind = df.copy()
-df_ind.drop(df.columns[col_ind], axis=1, inplace=True)
-df_ind.drop(df.columns[[0,1,2]], axis=1, inplace=True)
+df_ind.drop(df_ind.columns[col_ind], axis=1, inplace=True)
+df_ind.drop(df_ind.columns[[0,1]], axis=1, inplace=True)
 
 
 
@@ -80,7 +80,8 @@ def predict():
     
     
     int_features = list(input1) + list(input2) + input3_array + input4_array 
-    int_features = np.reshape(int_features, (-1, 787))
+    final_features = pd.DataFrame(int_features).transpose()
+    final_features.columns = df.columns
     prediction = model.predict(int_features)
     output = prediction[0]
     return render_template('index.html', prediction_text='Salary should be $ {}'.format(output))
