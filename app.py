@@ -6,6 +6,25 @@ import re
 
 app = Flask(__name__)
 model = pickle.load(open('modelSEExtraTree.pkl', 'rb'))
+    
+# Load and read file
+df = pd.read_csv("mcf5SE_fullstopword_TFIDF.csv")
+df.drop(df.columns[[0,2]], axis=1, inplace=True)
+    
+    
+col_jd = list(range(0,20))
+df_jd = df.copy()
+df_jd.drop(df.columns[[col_jd]], axis=1, inplace=True)
+
+    
+dflen = len(df.columns)
+col_ind = list(range(20,dflen))
+
+df_ind = df.copy()
+df_ind.drop(df.columns[[col_ind]], axis=1, inplace=True)
+df_ind.drop(df.columns[[0,1,2]], axis=1, inplace=True)
+
+
 
 @app.route('/')
 def home():
@@ -13,23 +32,6 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    
-    # Load and read file
-    df = pd.read_csv("mcf5SE_fullstopword_TFIDF.csv")
-    df.drop(df.columns[[0,2]], axis=1, inplace=True)
-    
-    
-    col_jd = list(range(0,20))
-    df_jd = df.copy()
-    df_jd.drop(df.columns[[col_jd]], axis=1, inplace=True)
-    
-    
-    dflen = len(df.columns)
-    col_ind = list(range(20,dflen))
-
-    df_ind = df.copy()
-    df_ind.drop(df.columns[[col_ind]], axis=1, inplace=True)
-    df_ind.drop(df.columns[[0,1,2]], axis=1, inplace=True)
     
     
     input0 = request.form.get("job_title")
