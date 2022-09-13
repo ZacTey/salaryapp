@@ -3,6 +3,7 @@ from flask import Flask, request, render_template
 import pickle
 import pandas as pd
 import re 
+from string import punctuation
 
 app = Flask(__name__)
 model = pickle.load(open('modelSEExtraTree.pkl', 'rb'))
