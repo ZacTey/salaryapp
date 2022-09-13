@@ -48,7 +48,7 @@ def predict():
     tokens = [WNlemma.lemmatize(t) for t in tokens] # lemmatize
     stops = set(stopwords.words('english'))
     tokens4 = [word for word in tokens4 if word not in stops] # remove stopword
-    input4 = " ".join(tokens) # join all token separated by a space so that it is a document
+    input4 = " ".join(tokens4) # join all token separated by a space so that it is a document
     input4 = input4.split()
     #print(input4)
     
