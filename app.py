@@ -16,7 +16,7 @@ df.drop(df.columns[[0,1,2]], axis=1, inplace=True)
 dflen = len(df.columns)
 df.reset_index(drop=True)
     
-ccol_jd = range(0,19)
+col_jd = range(0,19)
 df_jd = df.copy()
 df_jd.drop(df.columns[col_jd], axis=1, inplace=True)
 
