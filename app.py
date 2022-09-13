@@ -4,6 +4,7 @@ import pickle
 import pandas as pd
 import re 
 from string import punctuation
+import nltk
 
 app = Flask(__name__)
 model = pickle.load(open('modelSEExtraTree.pkl', 'rb'))
