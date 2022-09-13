@@ -49,22 +49,20 @@ def predict():
     text4 = re.sub(r'\d+', '', text4)
     tokens4 = nltk.word_tokenize(text4)  # tokenize
     tokens = [WNlemma.lemmatize(t) for t in tokens] # lemmatize
-    stops = set(stopwords.words('english'))
-    tokens4 = [word for word in tokens4 if word not in stops] # remove stopword
     input4 = " ".join(tokens4) # join all token separated by a space so that it is a document
     input4 = input4.split()
     #print(input4)
     
     
-    #input3_array = []
-    #for column_headers in df_ind.columns:
-    #    if column_headers in input3:
+    input3_array = []
+    for column_headers in df_ind.columns:
+        if column_headers in input3:
           #print(column_headers)
-    #      input3_array.append(1)
+          input3_array.append(1)
           #print (1)
-    #    else:
+        else:
           #print(column_headers)
-    #      input3_array.append(0)
+          input3_array.append(0)
           #print (0)
     
     #input4_array = []
