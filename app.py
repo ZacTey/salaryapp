@@ -40,6 +40,7 @@ def predict():
     input3 = request.form.get('industry')
     input4 = request.form.get('Job Description')
     
+    input4 = str(input4)
     text4 = input4.lower()  # Lowercase text
     text4 = re.sub(f"[{re.escape(punctuation)}]", " ", text4)  # Remove punctuation
     text4 = " ".join(text4.split())  # Remove extra spaces, tabs, and new lines
