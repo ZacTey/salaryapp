@@ -80,7 +80,8 @@ def predict():
     
     
     int_features = list(input1) + list(input2) + input3_array + input4_array 
-    prediction = model.predict([int_features])
+    int_features = np.reshape(int_features, (-1, 787))
+    prediction = model.predict(int_features)
     output = prediction[0]
     return render_template('index.html', prediction_text='Salary should be $ {}'.format(output))
 
