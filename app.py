@@ -5,7 +5,10 @@ import pandas as pd
 import re 
 from string import punctuation
 import nltk
+nltk.download('omw-1.4')
+nltk.download('stopwords')
 nltk.download('punkt')
+nltk.download('wordnet')
 
 app = Flask(__name__)
 model = pickle.load(open('modelSEExtraTree.pkl', 'rb'))
