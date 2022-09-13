@@ -60,13 +60,13 @@
 	{{ prediction_text }}
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="POST">
-	<label for="job title" font size="-1">Job Title</label>
+	<label for="job title" font size="-3">Job Title</label>
         <input type="text" name="job_title" placeholder="Please enter job title" value="Software Engineer" required="required" readonly>
 	    
-	<label for="exp">Years of Experience</label>    
+	<label for="exp" font size="-3">Years of Experience</label>    
         <input type="text" name="exp" placeholder="Please enter years of experience" required="required" />
 	    
-	<label for="level">Level</label>       
+	<label for="level" font size="-3">Level</label>       
         <!--<input type="text" name="level" placeholder="Please enter level" required="required" /> -->
 	<select name="level" id="level">
         <option value="1">non-executive</option>
@@ -78,9 +78,31 @@
         <option value="7">professional</option>
 	<option value="8">senior management</option>
 	</select>
+	
+	<label for="industry" font size="-3">Industry</label> 
+        <!--<input type="text" name="industry" placeholder="Please enter industry" required="required" />-->
+	<select name="industry" id="industry">
+	<option value="1">accounting/auditing/taxation</option>
+        <option value="2">advertising/media</option>
+        <option value="3">architecture/interiordesign</option>
+        <option value="4">bankingandfinance</option>
+        <option value="5">buildingandconstruction</option>
+        <option value="6">consulting</option>
+        <option value="7">education</option>
+	<option value="8">engineering</option>
+	<option value="9">events</option>
+        <option value="10">healthcare</option>
+        <option value="11">information technology</option>
+        <option value="12">insurance</option>
+        <option value="13">labs</option>
+        <option value="14">manufacturing</option>
+        <option value="15">other</option>
+	<option value="16">sales/retail</option>   
+	<option value="17">telcom</option>  
+	</select> 
 	    
-        <input type="text" name="industry" placeholder="Please enter industry" required="required" />
-	<p>Enter Your Job Description Here</p>
+	    
+	<label for="jobdes" font size="-3">Enter Your Job Description Here</label> 
 	<input type="text" name="jobdes" placeholder="Please enter Job Description">
 	<p></p>
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict Salary</button>
