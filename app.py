@@ -65,26 +65,26 @@ def predict():
           input3_array.append(0)
           #print (0)
     
-    #input4_array = []
-    #for column_headers in df_jd.columns:
-    #    if column_headers in input4:
+    input4_array = []
+    for column_headers in df_jd.columns:
+        if column_headers in input4:
           #print(column_headers)
-    #      input4_array.append(1)
+          input4_array.append(1)
           #print (1)
-    #    else:
+        else:
           #print(column_headers)
-    #      input4_array.append(0)
+          input4_array.append(0)
           #print (0)
     
     
     
     
-    #int_features = list(input1) + list(input2) + input3_array + input4_array 
-    #final_features = pd.DataFrame(int_features)
-    #final_features = final_features.transpose()
-    #prediction = model.predict(final_features)
-    #output = prediction[0]
-    #return render_template('index.html', prediction_text='Salary should be $ {}'.format(output))
+    int_features = list(input1) + list(input2) + input3_array + input4_array 
+    final_features = pd.DataFrame(int_features)
+    final_features = final_features.transpose()
+    prediction = model.predict(final_features)
+    output = prediction[0]
+    return render_template('index.html', prediction_text='Salary should be $ {}'.format(output))
 
 
 if __name__ == "__main__":
