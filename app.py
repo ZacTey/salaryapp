@@ -49,6 +49,7 @@ def predict():
     text4 = " ".join(text4.split())  # Remove extra spaces, tabs, and new lines
     text4 = re.sub(r'\d+', '', text4)
     tokens4 = nltk.word_tokenize(text4)  # tokenize
+    #WNlemma = nltk.WordNetLemmatizer()
     #tokens4 = [WNlemma.lemmatize(t) for t in tokens4] # lemmatize
     input4 = " ".join(tokens4) # join all token separated by a space so that it is a document
     input4 = input4.split()
