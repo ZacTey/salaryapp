@@ -61,7 +61,7 @@
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="POST">
 
-        <input type="text" name="job_title" placeholder="job title" value="Software Engineer" required="required" />
+        <input type="text" name="job_title" placeholder="job title" value="Software Engineer" required="required" readonly>
         <input type="text" name="exp" placeholder="years of experience" required="required" />
         <input type="text" name="level" placeholder="level" required="required" />
         <input type="text" name="industry" placeholder="industry" required="required" />
