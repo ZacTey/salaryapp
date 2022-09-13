@@ -60,13 +60,28 @@
 	{{ prediction_text }}
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="POST">
-
-        <input type="text" name="job_title" placeholder="job title" value="Software Engineer" required="required" readonly>
-        <input type="text" name="exp" placeholder="years of experience" required="required" />
-        <input type="text" name="level" placeholder="level" required="required" />
-        <input type="text" name="industry" placeholder="industry" required="required" />
+	<label for="job title">Job Title</label>
+        <input type="text" name="job_title" placeholder="Please enter job title" value="Software Engineer" required="required" readonly>
+	    
+	<label for="exp">Job Title</label>    
+        <input type="text" name="exp" placeholder="Please enter years of experience" required="required" />
+	    
+	<label for="level">Level</label>       
+        <!--<input type="text" name="level" placeholder="Please enter level" required="required" /> -->
+	<select name="level" id="level">
+        <option value="0">JavaScript</option>
+        <option value="1">PHP</option>
+        <option value="2">Java</option>
+        <option value="3">Golang</option>
+        <option value="4">Python</option>
+        <option value="5">C#</option>
+        <option value="6">C++</option>
+        <option value="7">Erlang</option>
+	</select>
+	    
+        <input type="text" name="industry" placeholder="Please enter industry" required="required" />
 	<p>Enter Your Job Description Here</p>
-	<input type="text" name="jobdes" placeholder="Job Description">
+	<input type="text" name="jobdes" placeholder="Please enter Job Description">
 	<p></p>
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict Salary</button>
     </form>
