@@ -12,9 +12,9 @@ df = pd.read_csv("mcf5SE_fullstopword_TFIDF.csv")
 df.drop(df.columns[[0,2]], axis=1, inplace=True)
     
     
-#col_jd = list(range(0,20))
-#df_jd = df.copy()
-#df_jd.drop(df.columns[[col_jd]], axis=1, inplace=True)
+col_jd = range(0,20)
+df_jd = df.copy()
+df_jd.drop(df.columns[[col_jd]], axis=1, inplace=True)
 
     
 #dflen = len(df.columns)
