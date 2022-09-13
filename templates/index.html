@@ -60,23 +60,23 @@
 	{{ prediction_text }}
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="POST">
-	<label for="job title">Job Title</label>
+	<label for="job title" font size="-1">Job Title</label>
         <input type="text" name="job_title" placeholder="Please enter job title" value="Software Engineer" required="required" readonly>
 	    
-	<label for="exp">Job Title</label>    
+	<label for="exp">Years of Experience</label>    
         <input type="text" name="exp" placeholder="Please enter years of experience" required="required" />
 	    
 	<label for="level">Level</label>       
         <!--<input type="text" name="level" placeholder="Please enter level" required="required" /> -->
 	<select name="level" id="level">
-        <option value="0">JavaScript</option>
-        <option value="1">PHP</option>
-        <option value="2">Java</option>
-        <option value="3">Golang</option>
-        <option value="4">Python</option>
-        <option value="5">C#</option>
-        <option value="6">C++</option>
-        <option value="7">Erlang</option>
+        <option value="1">non-executive</option>
+        <option value="2">junior executive</option>
+        <option value="3">executive</option>
+        <option value="4">senior executive</option>
+        <option value="5">manager</option>
+        <option value="6">middle management</option>
+        <option value="7">professional</option>
+	<option value="8">senior management</option>
 	</select>
 	    
         <input type="text" name="industry" placeholder="Please enter industry" required="required" />
