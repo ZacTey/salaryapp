@@ -82,7 +82,7 @@ def predict():
     int_features = list(input1) + list(input2) + input3_array + input4_array 
     final_features = pd.DataFrame(int_features).transpose()
     final_features.columns = df.columns
-    prediction = model.predict(int_features)
+    prediction = model.predict(final_features)
     output = prediction[0]
     return render_template('index.html', prediction_text='Salary should be $ {}'.format(output))
 
